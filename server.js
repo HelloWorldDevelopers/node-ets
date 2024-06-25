@@ -2,6 +2,8 @@ const express=require("express");
 const bodyParse=require("body-parser")
 const cors = require('cors');
 const authentication=require("./src/Routes/Authentication")
+const userRoute=require("./src/Routes/UserRoute")
+
 const User=require("./src/Model/User")
 const Contact=require("./src/Model/Contact")
 
@@ -24,6 +26,8 @@ app.use(express.json())
 /* ---------------------------------- */
  
 app.use("/api/v1/authenticate",authentication)
+app.use("/api/v1/user",userRoute)
+
 
 /* starting point of the application */
 app.listen(process.env.PORT,()=>{

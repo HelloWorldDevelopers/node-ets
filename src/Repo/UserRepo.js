@@ -18,3 +18,9 @@ module.exports.checkUserIsExist= async(loginDetails)=>{
     }
     
 }
+
+module.exports.createUser= async(userDetails)=>{
+ 
+    const saveUser=await User.create(userDetails)
+    return saveUser.toJSON();
+}
